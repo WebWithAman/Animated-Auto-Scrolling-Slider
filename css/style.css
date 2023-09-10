@@ -1,0 +1,115 @@
+/**********************************************************
+  Reset Default Properties Start
+**********************************************************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 62.5%;
+  /* Now 1rem = 1em = 10px */
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/**********************************************************
+  Reset Default Properties End
+**********************************************************/
+
+
+/**********************************************************
+  Wrapper Start
+**********************************************************/
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, rgb(9, 25, 105), rgb(68, 221, 248));
+}
+
+
+/**********************************************************
+  Outer Container Start
+**********************************************************/
+.outer-container {
+  width: 90%;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.349) inset, -5px -5px 15px rgba(0, 0, 0, 0.29) inset;
+  padding: 1.5rem;
+}
+
+/**********************************************************
+  Outer Container End
+**********************************************************/
+
+
+/**********************************************************
+  Inner Container Start
+**********************************************************/
+.inner-container {
+  display: flex;
+  width: calc(30rem * 20);
+  transform: translateX(0%);
+  animation: animate 30s linear infinite;
+}
+
+
+/**********************************************************
+   Keyframes For Animate Slider
+**********************************************************/
+@keyframes animate {
+  100% {
+    transform: translateX(calc(-30rem * 10));
+  }
+}
+
+/**********************************************************
+  Image Box Start
+**********************************************************/
+.img-box {
+  width: 30rem;
+  padding: 1.5rem;
+}
+
+
+.img-box img {
+  width: 100%;
+  transform: perspective(300px) scale(1);
+  transition: all .3s linear;
+  border-radius: 2rem;
+}
+
+
+@media (hover:hover) {
+
+  .inner-container:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .img-box img:hover {
+    transform: perspective(300px) scale(1.1);
+    cursor: pointer;
+    filter: hue-rotate(2deg)
+  }
+
+}
+
+/**********************************************************
+  Image Box End
+**********************************************************/
+
+
+/**********************************************************
+  Inner Container End
+**********************************************************/
+
